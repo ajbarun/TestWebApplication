@@ -9,6 +9,13 @@
 # Build and test ASP.NET Core projects targeting the full .NET Framework.
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure_AjayBarun (f04a6b52-3d82-4711-ac46-1e07d9402054)'
+    appType: 'webApp'
+    appName: 'abc01'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
 trigger:
 - master
 
